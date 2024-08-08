@@ -78,7 +78,11 @@ const TouristZones = () => {
         <div className="content-wrap">
           <div className="weather-container">
             <div className="weather-icon" onClick={toggleWeatherInfo}>
-              ☀️
+              <img
+                src="/imgs/weather.png"
+                alt="Weather Icon"
+                className="weather-image"
+              />
             </div>
             {showWeatherInfo &&
               (weather ? (

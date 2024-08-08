@@ -55,7 +55,13 @@
   cursor: pointer;
 }
 
-.weather-info {
+.weather-image {
+  width: 50px; /* Ajusta el tamaño de la imagen según sea necesario */
+  height: 50px; /* Ajusta el tamaño de la imagen según sea necesario */
+}
+
+.weather-info,
+.weather-error {
   position: absolute;
   bottom: 50px;
   left: 0;
@@ -68,29 +74,22 @@
   margin-top: 10px;
 }
 
-.weather-info h2 {
+.weather-info h2,
+.weather-error h2 {
   font-size: 1.5rem;
   margin-bottom: 10px;
   color: #333;
 }
 
-.weather-info p {
+.weather-info p,
+.weather-error p {
   font-size: 1rem;
   margin: 5px 0;
   color: #555;
 }
 
 .weather-error {
-  position: absolute;
-  bottom: 50px;
-  left: 0;
-  text-align: left;
-  padding: 20px;
   background-color: #ffcccb;
-  border-radius: 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  margin-top: 10px;
   color: #333;
 }
 
