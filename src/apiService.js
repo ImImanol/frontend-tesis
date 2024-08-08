@@ -18,7 +18,10 @@ api.interceptors.request.use(
 
 export const loginUser = async (identifier, password) => {
   try {
-    const response = await api.post("/auth/login", { identifier, password });
+    const response = await api.post(
+      "https://backend-tesis-one.vercel.app/auth/login",
+      { identifier, password }
+    );
     return {
       token: response.data.token,
       role: response.data.role,
@@ -33,7 +36,11 @@ export const loginUser = async (identifier, password) => {
 
 export const registerUser = async (username, email, password) => {
   try {
-    await api.post("/auth/register", { username, email, password });
+    await api.post("https://backend-tesis-one.vercel.app/auth/register", {
+      username,
+      email,
+      password,
+    });
   } catch (error) {
     console.error("Error registering:", error);
     throw error;
@@ -54,7 +61,9 @@ export const getProvinces = async () => {
 
 export const getCities = async (provinceId) => {
   try {
-    const response = await api.get(`/provinces/${provinceId}/cities`);
+    const response = await api.get(
+      `https://backend-tesis-one.vercel.app/provinces/${provinceId}/cities`
+    );
     return response.data;
   } catch (error) {
     console.error("Error fetching cities:", error);
@@ -64,7 +73,9 @@ export const getCities = async (provinceId) => {
 
 export const getCityDetails = async (cityId) => {
   try {
-    const response = await api.get(`/cities/${cityId}`);
+    const response = await api.get(
+      `https://backend-tesis-one.vercel.app/cities/${cityId}`
+    );
     return response.data;
   } catch (error) {
     console.error("Error fetching city details:", error.message);
@@ -74,9 +85,12 @@ export const getCityDetails = async (cityId) => {
 
 export const getTouristZones = async (cityId, filter) => {
   try {
-    const response = await api.get(`/tourist-zones/city/${cityId}`, {
-      params: filter ? { category: filter } : {},
-    });
+    const response = await api.get(
+      `https://backend-tesis-one.vercel.app/tourist-zones/city/${cityId}`,
+      {
+        params: filter ? { category: filter } : {},
+      }
+    );
     return response.data;
   } catch (error) {
     console.error("Error fetching tourist zones:", error);
@@ -99,7 +113,9 @@ export const getWeatherByCityName = async (cityName) => {
 
 export const getTouristZoneDetail = async (zoneId) => {
   try {
-    const response = await api.get(`/tourist-zones/${zoneId}`);
+    const response = await api.get(
+      `https://backend-tesis-one.vercel.app/tourist-zones/${zoneId}`
+    );
     return response.data;
   } catch (error) {
     console.error("Error fetching tourist zone detail:", error);
@@ -109,7 +125,9 @@ export const getTouristZoneDetail = async (zoneId) => {
 
 export const getUserFavorites = async () => {
   try {
-    const response = await api.get("/user/favorites");
+    const response = await api.get(
+      "https://backend-tesis-one.vercel.app/user/favorites"
+    );
     return response.data.favorites;
   } catch (error) {
     console.error("Error fetching user favorites:", error);
@@ -119,7 +137,10 @@ export const getUserFavorites = async () => {
 
 export const addFavorite = async (zoneId) => {
   try {
-    const response = await api.post("/user/favorites", { zoneId });
+    const response = await api.post(
+      "https://backend-tesis-one.vercel.app/user/favorites",
+      { zoneId }
+    );
     return response.data;
   } catch (error) {
     console.error("Error adding favorite:", error);
@@ -129,7 +150,9 @@ export const addFavorite = async (zoneId) => {
 
 export const removeFavorite = async (zoneId) => {
   try {
-    const response = await api.delete(`/user/favorites/${zoneId}`);
+    const response = await api.delete(
+      `https://backend-tesis-one.vercel.app/user/favorites/${zoneId}`
+    );
     return response.data;
   } catch (error) {
     console.error("Error removing favorite:", error);
@@ -139,7 +162,10 @@ export const removeFavorite = async (zoneId) => {
 
 export const createProvince = async (province) => {
   try {
-    const response = await api.post("/admin/provinces", province);
+    const response = await api.post(
+      "https://backend-tesis-one.vercel.app/admin/provinces",
+      province
+    );
     return response.data;
   } catch (error) {
     console.error("Error creating province:", error);
@@ -149,7 +175,10 @@ export const createProvince = async (province) => {
 
 export const updateProvince = async (id, province) => {
   try {
-    const response = await api.put(`/admin/provinces/${id}`, province);
+    const response = await api.put(
+      `https://backend-tesis-one.vercel.app/admin/provinces/${id}`,
+      province
+    );
     return response.data;
   } catch (error) {
     console.error("Error updating province:", error);
@@ -159,7 +188,9 @@ export const updateProvince = async (id, province) => {
 
 export const deleteProvince = async (id) => {
   try {
-    await api.delete(`/admin/provinces/${id}`);
+    await api.delete(
+      `https://backend-tesis-one.vercel.app/admin/provinces/${id}`
+    );
   } catch (error) {
     console.error("Error deleting province:", error);
     throw error;
@@ -168,7 +199,10 @@ export const deleteProvince = async (id) => {
 
 export const createCity = async (city) => {
   try {
-    const response = await api.post("/admin/cities", city);
+    const response = await api.post(
+      "https://backend-tesis-one.vercel.app/admin/cities",
+      city
+    );
     return response.data;
   } catch (error) {
     console.log(error);
@@ -179,7 +213,9 @@ export const createCity = async (city) => {
 
 export const getAdminCities = async () => {
   try {
-    const response = await api.get("/admin/cities");
+    const response = await api.get(
+      "https://backend-tesis-one.vercel.app/admin/cities"
+    );
     return response.data;
   } catch (error) {
     console.error("Error fetching cities:", error);
@@ -189,7 +225,10 @@ export const getAdminCities = async () => {
 
 export const updateCity = async (id, city) => {
   try {
-    const response = await api.put(`/admin/cities/${id}`, city);
+    const response = await api.put(
+      `https://backend-tesis-one.vercel.app/admin/cities/${id}`,
+      city
+    );
     return response.data;
   } catch (error) {
     console.error("Error updating city:", error);
@@ -199,7 +238,7 @@ export const updateCity = async (id, city) => {
 
 export const deleteCity = async (id) => {
   try {
-    await api.delete(`/admin/cities/${id}`);
+    await api.delete(`https://backend-tesis-one.vercel.app/admin/cities/${id}`);
   } catch (error) {
     console.error("Error deleting city:", error);
     throw error;
@@ -208,7 +247,10 @@ export const deleteCity = async (id) => {
 
 export const createTouristZone = async (touristZone) => {
   try {
-    const response = await api.post("/admin/tourist-zones", touristZone);
+    const response = await api.post(
+      "https://backend-tesis-one.vercel.app/admin/tourist-zones",
+      touristZone
+    );
     return response.data;
   } catch (error) {
     console.error("Error creating tourist zone:", error);
@@ -218,7 +260,9 @@ export const createTouristZone = async (touristZone) => {
 
 export const getAdminTouristZones = async () => {
   try {
-    const response = await api.get("/admin/tourist-zones");
+    const response = await api.get(
+      "https://backend-tesis-one.vercel.app/admin/tourist-zones"
+    );
     return response.data;
   } catch (error) {
     console.error("Error fetching tourist zones:", error);
@@ -228,7 +272,10 @@ export const getAdminTouristZones = async () => {
 
 export const updateTouristZone = async (id, touristZone) => {
   try {
-    const response = await api.put(`/admin/tourist-zones/${id}`, touristZone);
+    const response = await api.put(
+      `https://backend-tesis-one.vercel.app/admin/tourist-zones/${id}`,
+      touristZone
+    );
     return response.data;
   } catch (error) {
     console.error("Error updating tourist zone:", error);
@@ -238,7 +285,9 @@ export const updateTouristZone = async (id, touristZone) => {
 
 export const deleteTouristZone = async (id) => {
   try {
-    await api.delete(`/admin/tourist-zones/${id}`);
+    await api.delete(
+      `https://backend-tesis-one.vercel.app/admin/tourist-zones/${id}`
+    );
   } catch (error) {
     console.error("Error deleting tourist zone:", error);
     throw error;
@@ -248,7 +297,10 @@ export const deleteTouristZone = async (id) => {
 // Actualizar perfil de usuario
 export const updateUserProfile = async (data) => {
   try {
-    const response = await api.put("/user/profile", data);
+    const response = await api.put(
+      "https://backend-tesis-one.vercel.app/user/profile",
+      data
+    );
     return response.data;
   } catch (error) {
     console.error("Error updating user profile:", error);
@@ -258,7 +310,9 @@ export const updateUserProfile = async (data) => {
 
 export const getComments = async (zoneId) => {
   try {
-    const response = await api.get(`/tourist-zones/${zoneId}/comments`);
+    const response = await api.get(
+      `https://backend-tesis-one.vercel.app/tourist-zones/${zoneId}/comments`
+    );
     return response.data;
   } catch (error) {
     console.error("Error fetching comments:", error);
@@ -268,9 +322,12 @@ export const getComments = async (zoneId) => {
 
 export const addComment = async (zoneId, content) => {
   try {
-    const response = await api.post(`/tourist-zones/${zoneId}/comments`, {
-      content,
-    });
+    const response = await api.post(
+      `https://backend-tesis-one.vercel.app/tourist-zones/${zoneId}/comments`,
+      {
+        content,
+      }
+    );
     return response.data;
   } catch (error) {
     console.error("Error adding comment:", error);
@@ -283,11 +340,15 @@ export const uploadImage = async (imageFile) => {
   formData.append("image", imageFile);
 
   try {
-    const response = await api.post("/upload", formData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    });
+    const response = await api.post(
+      "https://backend-tesis-one.vercel.app/upload",
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
     return response.data.filePath;
   } catch (error) {
     console.error("Error uploading image:", error);
@@ -298,10 +359,13 @@ export const uploadImage = async (imageFile) => {
 // Actualizar contraseña de usuario
 export const updatePassword = async ({ currentPassword, newPassword }) => {
   try {
-    const response = await api.put("/user/update-password", {
-      currentPassword,
-      newPassword,
-    });
+    const response = await api.put(
+      "https://backend-tesis-one.vercel.app/user/update-password",
+      {
+        currentPassword,
+        newPassword,
+      }
+    );
     return response.data;
   } catch (error) {
     console.error("Error updating password:", error);
