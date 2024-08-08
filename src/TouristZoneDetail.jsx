@@ -97,11 +97,7 @@ const TouristZoneDetail = () => {
           {isFavorite ? <FaHeart /> : <FaRegHeart />}
         </button>
       </div>
-      <img
-        src={`http://localhost:3000${zone.image}`}
-        alt={zone.name}
-        className="zone-image"
-      />
+      <img src={zone.image} alt={zone.name} className="zone-image" />
       <div className="zone-details">
         <p>{zone.description}</p>
         <p>{zone.longDescription}</p>
@@ -118,7 +114,7 @@ const TouristZoneDetail = () => {
                 <img
                   src={
                     comment.user.profileIcon
-                      ? `/icons/${comment.user.profileIcon}`
+                      ? comment.user.profileIcon
                       : "/icons/icon1.png"
                   }
                   alt="User Icon"

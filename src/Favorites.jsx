@@ -29,7 +29,6 @@ const Favorites = () => {
         <div className="full-height-container">
           <div className="favorites-container">
             <p>Tienes que tener una cuenta creada para agregar favoritos.</p>
-            <a href="/auth/login">Iniciar sesión</a>
           </div>
         </div>
       </div>
@@ -59,7 +58,6 @@ const Favorites = () => {
             <p>
               No tienes favoritos aun. Busca zonas turísticas que te gusten.
             </p>
-            <a href="/provinces">Ir a Explorar</a>
           </div>
         )}
       </div>

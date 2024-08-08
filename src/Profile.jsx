@@ -1,15 +1,8 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { AuthContext } from "./AuthContext";
 import { updateUserProfile, updatePassword } from "./apiService";
+import { getIconsFromFirebase } from "./firebaseService.js";
 import "./Profile.css";
-
-const icons = [
-  "/icons/icon1.png",
-  "/icons/icon2.png",
-  "/icons/icon3.png",
-  "/icons/icon4.png",
-  "/icons/icon5.png",
-];
 
 const Profile = () => {
   const { logout } = useContext(AuthContext);
@@ -17,8 +10,9 @@ const Profile = () => {
   const [username, setUsername] = useState(localStorage.getItem("username"));
   const [email, setEmail] = useState(localStorage.getItem("email"));
   const [profileIcon, setProfileIcon] = useState(
-    localStorage.getItem("profileIcon") || icons[0]
+    localStorage.getItem("profileIcon") || ""
   );
+  const [icons, setIcons] = useState([]);
   const [isEditingUsername, setIsEditingUsername] = useState(false);
   const [isEditingEmail, setIsEditingEmail] = useState(false);
   const [isEditingPassword, setIsEditingPassword] = useState(false);
@@ -27,6 +21,23 @@ const Profile = () => {
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
   const [isIconChanged, setIsIconChanged] = useState(false);
+
+  useEffect(() => {
+    const fetchIcons = async () => {
+      try {
+        const iconUrls = await getIconsFromFirebase();
+        setIcons(iconUrls);
+        if (!profileIcon && iconUrls.length > 0) {
+          setProfileIcon(iconUrls[0]);
+          localStorage.setItem("profileIcon", iconUrls[0]);
+        }
+      } catch (err) {
+        setError("Error al cargar los iconos.");
+      }
+    };
+
+    fetchIcons();
+  }, [profileIcon]);
 
   const handleSave = async () => {
     try {
@@ -76,11 +87,13 @@ const Profile = () => {
   return (
     <div className="profile-container">
       <h1>Perfil</h1>
-      <img
-        src={profileIcon}
-        alt="Profile Icon"
-        className="current-profile-icon"
-      />
+      {profileIcon && (
+        <img
+          src={profileIcon}
+          alt="Profile Icon"
+          className="current-profile-icon"
+        />
+      )}
       <div>
         <label>Icono de perfil:</label>
         <div className="icon-selection">
