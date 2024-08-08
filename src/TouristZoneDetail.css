@@ -1,3 +1,4 @@
+/* Estilos generales para todos los dispositivos */
 .tourist-zone-detail-container {
   max-width: 900px;
   margin: 0 auto;
@@ -49,6 +50,10 @@
 
 .zone-details iframe {
   border: none;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  border-radius: 8px;
 }
 
 .comments-section {
@@ -66,6 +71,7 @@
   border-bottom: 1px solid #eee;
   margin-bottom: 15px;
   padding-bottom: 10px;
+  flex-direction: column; /* Añadido para asegurar que los comentarios se adapten mejor en dispositivos pequeños */
 }
 
 .comment-header {
@@ -130,9 +136,81 @@
   background-color: #367bbd;
 }
 
-.zone-details iframe {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16/9;
-  border-radius: 8px;
+/* Media Queries */
+@media (max-width: 768px) {
+  .zone-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .favorite-button {
+    font-size: 1.2rem;
+  }
+
+  .zone-details p {
+    font-size: 1rem;
+  }
+
+  .comments-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .comment {
+    flex-direction: column; /* Asegúrate de que los comentarios se apilen verticalmente en pantallas más pequeñas */
+  }
+
+  .comment-user-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .comment-header strong {
+    font-size: 1rem;
+  }
+
+  .comment-header small {
+    font-size: 0.8rem;
+  }
+
+  .comment p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .zone-header h1 {
+    font-size: 1.2rem;
+  }
+
+  .favorite-button {
+    font-size: 1rem;
+  }
+
+  .zone-details p {
+    font-size: 0.9rem;
+  }
+
+  .comments-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .comment {
+    flex-direction: column; /* Asegúrate de que los comentarios se apilen verticalmente en pantallas muy pequeñas */
+  }
+
+  .comment-user-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .comment-header strong {
+    font-size: 0.9rem;
+  }
+
+  .comment-header small {
+    font-size: 0.7rem;
+  }
+
+  .comment p {
+    font-size: 0.8rem;
+  }
 }
