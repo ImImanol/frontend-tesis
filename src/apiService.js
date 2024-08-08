@@ -1,6 +1,6 @@
 import axios from "axios";
 
-// Usa la URL del backend desde la variable de entorno
+// Configura la instancia de axios con la URL base desde la variable de entorno
 const api = axios.create({
   baseURL: process.env.REACT_APP_API_BASE_URL,
 });
@@ -117,7 +117,7 @@ export const getUserFavorites = async () => {
 
 export const addFavorite = async (zoneId) => {
   try {
-    const response = await api.post(`/user/favorites`, { zoneId });
+    const response = await api.post("/user/favorites", { zoneId });
     return response.data;
   } catch (error) {
     console.error("Error adding favorite:", error);
