@@ -1,8 +1,10 @@
 import axios from "axios";
+import { storage } from "./firebase-config";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 // Configura la instancia de axios con la URL base desde la variable de entorno
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_BASE_URL,
+  baseURL: "https://backend-tesis-one.vercel.app",
 });
 
 api.interceptors.request.use(
@@ -336,20 +338,11 @@ export const addComment = async (zoneId, content) => {
 };
 
 export const uploadImage = async (imageFile) => {
-  const formData = new FormData();
-  formData.append("image", imageFile);
-
   try {
-    const response = await api.post(
-      "https://backend-tesis-one.vercel.app/upload",
-      formData,
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      }
-    );
-    return response.data.filePath;
+    const imageRef = ref(storage, `images/${imageFile.name}`);
+    const snapshot = await uploadBytes(imageRef, imageFile);
+    const downloadURL = await getDownloadURL(snapshot.ref);
+    return downloadURL;
   } catch (error) {
     console.error("Error uploading image:", error);
     throw error;

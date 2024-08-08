@@ -1,4 +1,3 @@
-// src/EditForm.jsx
 import React, { useState, useEffect } from "react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import {
@@ -9,7 +8,7 @@ import {
   createTouristZone,
   updateTouristZone,
   getProvinces,
-  uploadImage, // Importar la nueva función
+  uploadImage, // Asegúrate de importar la función correcta
 } from "./apiService";
 import "./EditForm.css";
 
@@ -28,7 +27,7 @@ const EditForm = () => {
   });
 
   const [provinces, setProvinces] = useState([]);
-  const [imageFile, setImageFile] = useState(null); // Añadir estado para la imagen
+  const [imageFile, setImageFile] = useState(null);
   const navigate = useNavigate();
   const cityId = location.state?.cityId;
 
@@ -61,12 +60,11 @@ const EditForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Datos enviados para crear zona turística:", formData);
 
     try {
       if (imageFile) {
         const imageUrl = await uploadImage(imageFile);
-        formData.image = imageUrl; // Asignar la URL de la imagen al campo correspondiente
+        formData.image = imageUrl;
       }
 
       if (id) {
@@ -119,7 +117,7 @@ const EditForm = () => {
             Imagen:
             <input
               type="file"
-              name="image" // Este nombre debe coincidir con el esperado por multer
+              name="image"
               onChange={handleImageChange}
               className="input"
             />
