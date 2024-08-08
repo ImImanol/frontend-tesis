@@ -1,7 +1,8 @@
 import axios from "axios";
 
+// Usa la URL del backend desde la variable de entorno
 const api = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: process.env.REACT_APP_API_BASE_URL,
 });
 
 api.interceptors.request.use(
