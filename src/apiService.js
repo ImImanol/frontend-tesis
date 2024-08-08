@@ -42,7 +42,9 @@ export const registerUser = async (username, email, password) => {
 
 export const getProvinces = async () => {
   try {
-    const response = await api.get("/provinces");
+    const response = await api.get(
+      "https://backend-tesis-one.vercel.app/provinces"
+    );
     return response.data;
   } catch (error) {
     console.error("Error fetching provinces:", error);
