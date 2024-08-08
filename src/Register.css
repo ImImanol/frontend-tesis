@@ -1,0 +1,143 @@
+/* Contenedor principal del registro */
+.register-container {
+  display: flex;
+  height: 80vh;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+}
+
+form {
+  width: 100%;
+}
+
+.register-form-container,
+.register-image {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.register-form-container {
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.register-image img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.register-form-container h1 {
+  font-size: 2rem;
+  color: #333333;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.register-form-container .form-group {
+  margin-bottom: 1rem;
+}
+
+.register-form-container label {
+  display: block;
+  font-size: 1rem;
+  color: #555555;
+  margin-bottom: 0.5rem;
+}
+
+.register-form-container input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #cccccc;
+  border-radius: 0;
+  font-size: 1rem;
+}
+
+.register-form-container .register-button {
+  padding: 0.75rem;
+  background-color: #4b8fef;
+  color: #ffffff;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.register-form-container .register-button:hover {
+  background-color: #367bbd;
+}
+
+.register-form-container .error-message {
+  color: #ff0000;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.register-form-container p {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.register-form-container p a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.register-form-container p a:hover {
+  text-decoration: underline;
+}
+
+.password-input-container {
+  display: flex;
+  align-items: center;
+}
+
+.password-input-container input {
+  flex: 1;
+  border-radius: 0;
+}
+
+.toggle-password-visibility {
+  background: none;
+  border: none;
+  padding: 0 0.75rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-password-visibility:hover {
+  background-color: transparent;
+}
+
+.icon-password {
+  font-size: 1.5rem;
+  color: #1c1c1c;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .register-container {
+    flex-direction: column;
+  }
+
+  .register-form-container,
+  .register-image {
+    flex: none;
+    width: 100%;
+  }
+
+  .register-image {
+    display: none; /* Opcional: Ocultar la imagen en pantallas pequeñas */
+  }
+
+  .register-form-container {
+    padding: 1rem;
+  }
+}

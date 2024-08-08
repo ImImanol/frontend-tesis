@@ -1,0 +1,79 @@
+h1,
+h2 {
+  color: #333;
+}
+
+.admin-container {
+  min-height: calc(100vh - 200px);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.admin-container h1 {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.section-container {
+  margin: 50px 0;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.admin-table th,
+.admin-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.admin-table th {
+  background-color: #f8f8f8;
+}
+
+.admin-table td button {
+  margin-right: 5px;
+}
+
+.accion-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 0;
+  background-color: #4b8fef; /* Celeste menos llamativo */
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+button:hover {
+  background-color: #367bbd; /* Celeste menos llamativo */
+}
+
+.delete-button {
+  background-color: #f5c6cb;
+  color: #721c24;
+}
+
+.delete-button:hover {
+  background-color: #f1b0b7;
+}
+
+.edit-button {
+  background-color: #ffeeba;
+  color: #856404;
+}
+
+.edit-button:hover {
+  background-color: #ffe8a1;
+}

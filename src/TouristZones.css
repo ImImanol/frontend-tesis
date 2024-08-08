@@ -1,0 +1,151 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+}
+
+.content-wrap {
+  flex: 1;
+}
+
+.category-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.category-buttons button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: 1px solid #4b7ac5;
+  background-color: transparent;
+  color: #4b7ac5;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 1rem;
+  border-radius: 0;
+}
+
+.category-buttons button:hover {
+  background-color: #4b7ac5;
+  color: white;
+}
+
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.weather-container {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  z-index: 1000;
+}
+
+.weather-icon {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.weather-info {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  text-align: left;
+  padding: 20px;
+  background-color: #f0f8ff;
+  border-radius: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin-top: 10px;
+}
+
+.weather-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.weather-info p {
+  font-size: 1rem;
+  margin: 5px 0;
+  color: #555;
+}
+
+.weather-error {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  text-align: left;
+  padding: 20px;
+  background-color: #ffcccb;
+  border-radius: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin-top: 10px;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .category-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .category-buttons button {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+  }
+
+  .weather-info,
+  .weather-error {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  .weather-info h2,
+  .weather-error h2 {
+    font-size: 1.3rem;
+  }
+
+  .weather-info p,
+  .weather-error p {
+    font-size: 0.9rem;
+  }
+
+  .weather-container {
+    bottom: 20px;
+    left: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-buttons button {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .weather-info h2,
+  .weather-error h2 {
+    font-size: 1.1rem;
+  }
+
+  .weather-info p,
+  .weather-error p {
+    font-size: 0.8rem;
+  }
+
+  .weather-container {
+    bottom: 20px;
+    left: 20px;
+  }
+}
