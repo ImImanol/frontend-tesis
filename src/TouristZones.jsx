@@ -79,7 +79,7 @@ const TouristZones = () => {
           <div className="weather-container">
             <div className="weather-icon" onClick={toggleWeatherInfo}>
               <img
-                src="/imgs/weather.png"
+                src="/imgs/cloudy.png"
                 alt="Weather Icon"
                 className="weather-image"
               />
