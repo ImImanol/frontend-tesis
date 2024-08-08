@@ -1,15 +1,20 @@
-import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../AuthContext.jsx";
 import "./Navbar.css";
 
 const Navbar = () => {
   const { isAuthenticated, userRole } = useContext(AuthContext);
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location]);
 
   return (
     <nav className="navbar">
