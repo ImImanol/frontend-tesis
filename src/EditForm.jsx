@@ -8,7 +8,7 @@ import {
   createTouristZone,
   updateTouristZone,
   getProvinces,
-  uploadImage, // Asegúrate de importar la función correcta
+  uploadImage,
 } from "./apiService";
 import "./EditForm.css";
 
@@ -32,6 +32,8 @@ const EditForm = () => {
   const cityId = location.state?.cityId;
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     async function fetchProvinces() {
       try {
         const provincesList = await getProvinces();

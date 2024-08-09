@@ -1,7 +1,5 @@
 .edit-form-container {
-  min-height: calc(
-    100vh - 200px
-  ); /* Ajusta según la altura de tu header y footer */
+  min-height: calc(100vh - 200px);
   padding: 20px;
   box-sizing: border-box;
   display: flex;

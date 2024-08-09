@@ -13,7 +13,7 @@ import Navbar from "./components/Navbar";
 import AdminPanel from "./AdminPanel";
 import Favorites from "./Favorites";
 import Footer from "./components/Footer";
-import EditForm from "./EditForm"; // Importa el nuevo componente
+import EditForm from "./EditForm";
 import { AuthProvider, AuthContext } from "./AuthContext";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";

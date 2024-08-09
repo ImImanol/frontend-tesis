@@ -2,7 +2,6 @@ import axios from "axios";
 import { storage } from "./firebase-config";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
-// Configura la instancia de axios con la URL base desde la variable de entorno
 const api = axios.create({
   baseURL: "https://backend-tesis-one.vercel.app",
 });
@@ -349,7 +348,6 @@ export const uploadImage = async (imageFile) => {
   }
 };
 
-// Actualizar contraseña de usuario
 export const updatePassword = async ({ currentPassword, newPassword }) => {
   try {
     const response = await api.put(

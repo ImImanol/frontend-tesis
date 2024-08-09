@@ -203,11 +203,9 @@ header {
 
   .title h1 {
     font-size: 24px;
-    transform: translateX(
-      0
-    ); /* Evita el desplazamiento horizontal en móviles */
-    text-align: left; /* Centra el texto en móviles */
-    max-width: 100%; /* Asegura que el h1 no se desborde en móviles */
+    transform: translateX(0);
+    text-align: left;
+    max-width: 100%;
   }
 
   .button-title a {
