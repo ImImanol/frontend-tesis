@@ -86,7 +86,7 @@ const TouristZoneDetail = () => {
   };
 
   if (!zone) {
-    return <div>Loading...</div>;
+    return <div className="page-container">Loading...</div>;
   }
 
   return (

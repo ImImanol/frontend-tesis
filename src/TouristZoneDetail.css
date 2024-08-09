@@ -1,4 +1,3 @@
-/* Estilos generales para todos los dispositivos */
 .tourist-zone-detail-container {
   max-width: 900px;
   margin: 0 auto;
@@ -71,7 +70,7 @@
   border-bottom: 1px solid #eee;
   margin-bottom: 15px;
   padding-bottom: 10px;
-  flex-direction: column; /* Añadido para asegurar que los comentarios se adapten mejor en dispositivos pequeños */
+  flex-direction: column;
 }
 
 .comment-header {
@@ -155,7 +154,7 @@
   }
 
   .comment {
-    flex-direction: column; /* Asegúrate de que los comentarios se apilen verticalmente en pantallas más pequeñas */
+    flex-direction: column;
   }
 
   .comment-user-icon {
@@ -194,7 +193,7 @@
   }
 
   .comment {
-    flex-direction: column; /* Asegúrate de que los comentarios se apilen verticalmente en pantallas muy pequeñas */
+    flex-direction: column;
   }
 
   .comment-user-icon {
