@@ -18,6 +18,8 @@ const TouristZones = () => {
   const [weatherError, setWeatherError] = useState(null);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     const fetchCityDetails = async () => {
       try {
         const city = await getCityDetails(cityId);

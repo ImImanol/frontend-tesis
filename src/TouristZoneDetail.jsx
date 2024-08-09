@@ -22,6 +22,8 @@ const TouristZoneDetail = () => {
   const { isAuthenticated } = useContext(AuthContext);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     const fetchZoneDetail = async () => {
       try {
         const zoneData = await getTouristZoneDetail(zoneId);
