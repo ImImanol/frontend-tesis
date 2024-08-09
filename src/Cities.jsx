@@ -10,6 +10,8 @@ const Cities = () => {
   const [cities, setCities] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+
     const fetchCities = async () => {
       try {
         const citiesData = await getCities(provinceId);
