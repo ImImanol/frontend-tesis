@@ -177,11 +177,11 @@
 
 @media (max-width: 480px) {
   .zone-header h1 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 
   .favorite-button {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   .zone-details p {
